@@ -1,5 +1,5 @@
 @extends('layouts.admin.common')
-@section('title','患者様情報新規登録')
+@section('title','注意事項変更')
 
 @section('content')
 
