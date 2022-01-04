@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')｜Web検査結果確認</title>
+    <title>@yield('title')｜検査結果確認</title>
     <meta name="description" content="" />
 
     <link rel="canonical" href="" />
-    <!-- <link rel="icon" href="" sizes="96x96" type="image/png" /> -->
-    <!-- <link rel="shortcut icon" href="{{ asset('images/favicon.ico')}}" type="image/x-icon" /> -->
-    <link rel="apple-touch-icon" sizes="192x192" href="">
 
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-Control" content="no-cache,no-store" />
