@@ -1,6 +1,6 @@
 @section('header')
 <header>
-    <h1><a href="{{ route('admin.patients.list') }}">Web検査結果確認</a></h1>
+    <h1><a href="{{ route('admin.patients.list') }}">検査結果確認</a></h1>
     <div class="btn logout">
         <a class="dropdown-item" href="{{ route('admin.logout') }}"
             onclick="event.preventDefault();
