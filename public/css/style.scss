@@ -1,0 +1,985 @@
+@charset "utf-8";
+@import "settings";
+
+
+body {
+    background: $background-color;
+    position: relative;
+    min-height: 100vh;
+}
+a {
+    color: $primary-color;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.btn {
+    display: inline-block;
+    padding: 12px 64px;
+    background: $primary-color;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 2.5rem;
+    line-height: 2.77rem;
+    position: relative;
+    transition: ease-in-out 0.3s;
+    i {
+        position: absolute;
+        right: 40px;
+        top: 29%;
+    }
+    &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+    }
+    &.download {
+        width: 80%;
+        max-width: 400px;
+        padding: 12px 60px 12px 30px;
+        background: #FF752C;
+        // span {
+        //     display: inline-block;
+        // }
+        img {
+            position: absolute;
+            right: 17%;
+            top: 34%;
+        }
+    }
+    &.logout {
+        background: #22C3C3;
+    }
+    &-back {
+        background: #999999;
+    }
+    &-edit {
+        background: #FF752C;
+    }
+    &-register {
+        background: #FF752C;
+    }
+    &-delete {
+        background: #D2DFE6;
+        color: $primary-color;
+    }
+    @include pc() {
+        padding: 6px 64px;
+        font-size: 1.6rem;
+        &.logout {
+            padding: 6px 20px;
+        }
+        &-edit {
+           padding: 6px 20px;
+        }
+        &-register {
+            padding: 6px 20px;
+        }
+        &-delete {
+            padding: 6px 20px;
+        }
+        &.download {
+            padding: 6px 15px 6px 0;
+            img {
+                right: 6%;
+            }
+        }
+    }
+}
+
+.logo {
+    text-align: center;
+    padding-top: 37px;
+    + .center-box {
+        .center-box-inner {
+            // margin: 0 auto 2.5vw;
+            margin: 0 auto 30px;
+            // padding: 3vw 30px 2vw;
+        }
+        h1 {
+            margin-bottom: 25px;
+        }
+    }
+    @include tab2(){
+        padding-top: 15px;
+        img {
+            width: 180px;
+        }
+    }
+}
+
+.center-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.full {
+        min-height: 100vh;
+        .center-box-inner {
+            margin: 0 auto;
+            padding: 25px 30px;
+        }
+    }
+    &-inner {
+        min-width: 84.3%;
+        width: 92%;
+        max-width: 1620px;
+        min-height: 75vh;
+        // margin: 10vh auto 3vw;
+        margin: 5.2vw auto 2.5vw;
+        padding: 3vw 30px 2vw;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.patient {
+            display: block;
+        }
+    }
+    h1 {
+        margin-bottom: 44px;
+    }
+    @include tab2() {
+        &-inner {
+            padding: 50px 15px 50px;
+        }
+        &.full {
+            min-height: calc(100vh - 60px);
+            .center-box-inner {
+                margin: 0 auto;
+                padding: 25px 15px 0;
+            }
+        }
+        h1 {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+
+/* ------------------------------------
+  ログイン
+-------------------------------------- */
+.login{
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    input[type="button"] {
+        width: 192px;
+        margin: 0 auto;
+    }
+    @include pc() {
+        input[type="button"] {
+            width: 192px;
+            margin: 0 auto;
+        }
+    }
+}
+/* ------------------------------------
+  パスワードリセット
+-------------------------------------- */
+.reset-link {
+    margin: 1em auto;
+    a {
+        font-weight: bold;
+    }
+}
+.reset {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    .reset-link {
+        margin-top: 1em;
+    }
+    &-note {
+        text-align: left;
+        border: 1px solid $primary-color;
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        background: #fff;
+        &-title{
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        &-txt {
+            + .reset-note-txt {
+                margin-top: 1em;
+            }
+        }
+        @include tab2() {
+            padding: 15px 15px;
+        }
+    }
+}
+#reset-form {
+    margin-top: 25px;
+}
+
+/* ------------------------------------
+  推奨ブラウザ
+-------------------------------------- */
+.login-note {
+    border: 1px solid $primary-color;
+    padding: 15px 20px;
+    font-size: 1rem;
+    background: #fff;
+    &-txt {
+        font-size: 1.2rem;
+        margin-bottom: 1em;
+        color: $primary-color;
+        font-weight: bold;
+    }
+    @include tab2() {
+        padding: 15px 15px 0;
+    }
+}
+.browser-list {
+    display: flex;
+    > div {
+        flex:1;
+        // border: 1px solid red;
+    }
+    &-title {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0.8em;
+    }
+    ul {
+        text-align: left;
+        li {
+            position: relative;
+            &::before {
+                content: '・';
+            }
+        }
+    }
+    @include tab2() {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        > div {
+            flex-basis: 43%;
+            margin: 0 auto 15px;
+        }
+    }
+}
+
+/* ------------------------------------
+  検査結果
+-------------------------------------- */
+.result {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1060px;
+    &-item {
+        text-align: left;
+        margin-bottom: 46px;
+    }
+    h2 {
+        background: #2E5CA5;
+        color: #fff;
+        font-weight: bold;
+        padding: 7px 26px;
+        margin-bottom: 20px;
+        position: relative;
+        span {
+            position: relative;
+            z-index:3;
+        }
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 50%;
+            background: #2565C7;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+    }
+    &-name {
+        padding-left: 18px;
+        font-size: 2rem;
+        line-height: 1.34;
+    }
+    &-result {
+        font-size: 4.6rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.34;
+    }
+    &-note {
+        background: #FFD6D6;
+        padding: 1em 24px;
+        border-radius: 5px;
+        margin-bottom: 68px;
+        text-align: left;
+        &.nega {
+            height: 50px;
+            background:none;
+            p {
+                height: 2em;
+            }
+        }
+    }
+    .btn-dl {
+        margin-bottom: 48px;
+    }
+    @include tab2() {
+        margin: 0 auto 15px;
+        &-item {
+            margin-bottom: 26px;
+        }
+        &-result {
+            font-size: 3.6rem;
+        }
+        &-note {
+            padding: 10px;
+            margin-bottom: 25px;
+            &.nega {
+                height: 50px;
+                p {
+                    height: 2em;
+                }
+            }
+        }
+        .btn-dl {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+/* ------------------------------------
+  管理画面
+-------------------------------------- */
+main {
+    position: relative;
+    @include pc() {
+        overflow: hidden;
+    }
+}
+.admin {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $primary-color;
+        padding: 15px 10px 15px 42px;
+        h1 {
+            font-size: 2.4rem;
+            font-weight: bold;
+        }
+        a {
+            color: #fff;
+        }
+    }
+    @include pc() {
+        header {
+            padding: 10px;
+            justify-content: flex-end;
+            h1 {
+                font-size: 1.8rem;
+                margin-right: auto;
+            }
+            .navBtn {
+                margin-left: 20px;
+            }
+        }
+
+    }
+}
+.sidebar {
+    position: absolute;
+    width: 316px;
+    min-height: calc(100vh - 81px);
+    height: 100%;
+    background: #D2DFE6;
+    &-list {
+        li {
+            height: 70px;
+            font-size: 2rem;
+            font-weight: bold;
+            &.active {
+                a {
+                    background: #EEF9FF;
+                    color: $primary-color;
+                }
+            }
+            &.actives {
+                a {
+                    background: #EEF9FF;
+                    color: $primary-color;
+                }
+            }
+            img,svg {
+                margin-right: 31px;
+            }
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 21px 0 22px 40px;
+                color: #999999;
+                transition: ease-in-out 0.3s;
+                &:hover {
+                    text-decoration: none;
+                    background: #EEF9FF;
+                    color: $primary-color;
+                    svg {
+                        stroke: currentColor !important;
+                        fill: none;
+                    }
+                }
+            }
+            p {
+                height: 100%;
+                padding: 21px 0 22px 40px;
+            }
+            svg {
+                stroke: currentColor !important;
+                fill: none;
+            }
+        }
+    }
+    @include pc() {
+        position: absolute;
+        top:0;
+        right: -150%;
+        width: 100%;
+        max-width: 400px;
+        min-height: calc(100vh - 60px);
+        height: auto;
+        transition: ease-in-out 0.3s;
+        z-index: 20;
+        background: #EEF9FF;
+        &.active {
+            right: 0;
+        }
+        &-list {
+            li {
+                a {
+                    background: #EEF9FF;
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+.contents {
+    margin-left: 316px;
+    padding: 0 40px;
+    h2 {
+        font-size: 2.8rem;
+        font-weight: bold;
+        padding: 16px 0 17px;
+        border-bottom: 1px solid $primary-color;
+    }
+    .center-box {
+        &-inner {
+            width: 100%;
+            margin: 40px auto 32px;
+            box-shadow: 0px 4px 10px rgba(#000, 0.16);
+        }
+    }
+    @include pc() {
+        margin-left: 0;
+        h2 {
+            font-size: 2rem;
+            padding: 10px 0;
+        }
+    }
+    @include tab2() {
+        padding: 15px;
+        .center-box {
+            &-inner {
+                padding: 30px 15px;
+            }
+        }
+    }
+}
+.edit {
+    width: 100%;
+    &-date {
+        p{
+            &:not(:last-child) {
+                margin-bottom: 19px;
+            }
+        }
+        span {
+            &:nth-child(1){
+                margin-right: 56px;
+                font-weight: bold;
+            }
+        }
+    }
+    .btn-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 46px;
+        button {
+            width: 30%;
+            max-width: 200px;
+        }
+    }
+    @include tab2() {
+        button {
+            padding: 6px 20px;
+        }
+    }
+}
+.register {
+    width: 100%;
+    .btn-box {
+        max-width: 600px;
+        display: flex;
+        justify-content: space-around;
+        margin: 46px auto 0;
+        button {
+            width: 30%;
+            max-width: 200px;
+        }
+    }
+    @include tab2() {
+        .btn-box {
+            button {
+                width: 40%;
+                padding: 6px 20px;
+            }
+        }
+    }
+}
+.scroll{
+	overflow: auto;
+}
+.scroll::-webkit-scrollbar{
+	height: 16px;
+    padding: 4px 0;
+}
+.scroll::-webkit-scrollbar-track{
+	background: #F0F1F2;
+}
+.scroll::-webkit-scrollbar-thumb {
+	background: #999999;
+    height: 8px;
+    border-radius: 16px;
+    width: 256px;
+    border: 4px solid #F0F1F2;
+    border-width: 4px 0;
+}
+.patient {
+    .btn-dl {
+        margin: 15px 0 24px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .download {
+        max-width: 300px;
+        padding-left: 70px;
+        img {
+            right: 15%;
+        }
+        + .btn {
+            margin-left: 48px;
+        }
+    }
+    .center-box-inner {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    @include tab2() {
+        .btn-dl {
+            margin: 15px 0 24px;
+            display: block;
+            text-align: center;
+        }
+        .download {
+            max-width: 300px;
+            padding-left: 70px;
+            text-align: left;
+            + .btn {
+                margin: 15px auto 0;
+            }
+        }
+    }
+}
+.patient-list {
+    margin: 40px 24px 16px;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    th {
+        height: 50px;
+        background: #D2DFE6;
+        border: 1px solid #7BA3B9;
+        padding: 14px 0 12px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    td {
+        border: 1px solid #A3A3A3;
+        text-align: center;
+        padding: 11px 10px 13px 17px;
+        &:nth-child(2) {
+            text-align: left;
+        }
+    }
+    thead {
+        + tr {
+            td {
+                border-top: none;
+            }
+        }
+    }
+    .col-1 { width: 150px; }
+    .col-2 { width: 230px; }
+    .col-3 { width: 150px; }
+    .col-4 { width: 200px; }
+    .col-5 { width: 200px; }
+    .col-6 { width: 200px; }
+    .col-7 { width: 177px; }
+    .col-8 { width: 150px; }
+    .col-9 { width: 150px; }
+    .col-10 { width: 150px; }
+    .btn {
+        padding: 9px 5px;
+        width: 129px;
+        font-size: 1.6rem;
+    }
+    @include tab2() {
+        margin: 30px 10px 16px;
+        .col-1 { width: 110px; }
+        .col-2 { width: 180px; }
+        .col-3 { width: 120px; }
+        .col-4 { width: 150px; }
+        .col-5 { width: 150px; }
+        .col-6 { width: 150px; }
+        .col-7 { width: 157px; }
+        .col-8 { width: 120px; }
+        .col-9 { width: 120px; }
+        .col-10 { width: 120px; }
+        td {
+            padding: 8px 10px ;
+        }
+    }
+}
+
+
+
+/* ------------------------------------
+  ページング
+-------------------------------------- */
+.paging {
+    margin-bottom: 24px;
+    font-size: 0;
+    display: flex;
+    li {
+        align-self: flex-start;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        background: #fff;
+        border: 1px solid #D2DFE6;
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 12px 5px;
+        &.prev {
+            width: 124px;
+        }
+        &.next {
+            width: 94px;
+        }
+        &:not(:last-child) {
+            border-right: none;
+        }
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            background: #fff;
+            transition: ease-in-out 0.3s;
+            &:hover {
+                text-decoration: none;
+                background: #D2DFE6;
+            }
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            background: #fff;
+        }
+    }
+}
+/* ------------------------------------
+  フッター
+-------------------------------------- */
+footer {
+    position: absolute;
+    width: 100%;
+    left:0;
+    bottom: 0;
+    text-align: center;
+    @include tab2() {
+        position: relative;
+        padding-bottom: 10px;
+        span {
+            display: inline-block;
+        }
+    }
+}
+/* ------------------------------------
+  フォームリセット
+-------------------------------------- */
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: none;
+}
+
+input[type='submit'],
+input[type='button'],
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* ------------------------------------
+  フォームスタイル
+-------------------------------------- */
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+label {
+    display: block;
+    font-weight: bold;
+}
+input,
+textarea {
+    width: 100%;
+    border: 1px solid $primary-color;
+    background: #fff;
+    border-radius: 5px;
+    padding: 11px 24px 12px;
+    @include tab2() {
+        padding: 5px 15px;
+    }
+}
+input[type='button'] {
+    padding: 12px 64px;
+    background: $primary-color;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 2.5rem;
+    line-height: 2.77rem;
+    position: relative;
+    transition: ease-in-out 0.3s;
+    &:hover {
+        opacity: 0.7;
+    }
+    i {
+        position: absolute;
+        right: 40px;
+        top: 29%;
+    }
+    @include pc() {
+        // padding: 6px 20px;
+        font-size: 1.6rem;
+    }
+}
+button {
+    padding: 12px 64px;
+    background: $primary-color;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 2.5rem;
+    line-height: 2.77rem;
+    position: relative;
+    transition: ease-in-out 0.3s;
+    &:hover {
+        opacity: 0.7;
+    }
+    i {
+        position: absolute;
+        right: 40px;
+        top: 29%;
+    }
+    @include pc() {
+        // padding: 6px 20px;
+        font-size: 1.6rem;
+    }
+}
+.ui-datepicker .ui-datepicker-title select {
+    text-align: center;
+}
+
+.file {
+    > div,li {
+        display: flex;
+        justify-content: space-between;
+    }
+    li {
+        margin-bottom: 24px;
+        .file-list-name {
+            border-radius: 5px;
+            padding: 11px 24px 12px;
+            margin-right: 8px;
+            flex:1;
+        }
+    }
+    label {
+        padding: 10px 16px;
+        color: #ffffff;
+        background-color: $primary-color;
+        border-radius: 5px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    input[type="file"] {
+        display: none;
+    }
+    .delete {
+        width: 145px;
+        padding: 10px 16px;
+        color: $primary-color;
+        text-align: center;
+        background-color: #D2DFE6;
+        border-radius: 5px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+    &-title {
+        font-weight: bold;
+    }
+    &-name {
+        border: 1px solid $primary-color;
+        background: #fff;
+        border-radius: 5px;
+        padding: 11px 24px 12px;
+        margin-right: 8px;
+        flex:1;
+    }
+    @include tab2() {
+        li {
+            .file-list-name {
+                padding: 6px 10px 6px;
+            }
+        }
+        &-name {
+            padding: 6px 10px 6px;
+        }
+        label {
+            padding: 10px;
+        }
+        .delete {
+            width: 90px;
+            padding: 10px;
+        }
+    }
+}
+
+.form-item {
+    margin-bottom : 45px;
+    text-align: left;
+    @include tab2() {
+        margin-bottom: 25px;
+    }
+}
+
+#login-form {
+    max-width: 600px;
+    // margin: 78px auto 40px;
+    margin: 15px auto 0;
+}
+#edit-form {
+    max-width: 840px;
+    margin: 0 auto;
+    // padding: 45px 0 48px;
+    .form-item {
+        max-width: 600px;
+        margin: 0 auto 21px;
+        text-align: left;
+    }
+}
+
+
+/* ------------------------------------
+  あい小児科
+-------------------------------------- */
+.ai {
+    background: $ai-background-color;
+    a {
+        color: $ai-primary-color;
+    }
+    input,
+    select,
+    textarea {
+        border: 1px solid $ai-primary-color;
+    }
+    button {
+        background: $ai-primary-color;
+    }
+    .logo {
+        + .center-box {
+            &.full {
+                min-height: calc(100vh - 140px);
+            }
+        }
+    }
+    .result {
+        h2 {
+            background: #DD9247;
+            &::before {
+                background: #F5A200;
+            }
+        }
+    }
+    .btn {
+        color: #fff;
+        background: $ai-primary-color;
+        &:hover {
+            text-decoration: none;
+        }
+        &.download {
+            background: #00BA6C;
+        }
+    }
+}

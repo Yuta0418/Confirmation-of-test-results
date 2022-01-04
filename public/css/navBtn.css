@@ -1,0 +1,94 @@
+.navBtn {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .navBtn {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 30;
+    text-align: center;
+  }
+  .navBtn span {
+    display: block;
+    position: absolute;
+    width: 23px;
+    border-bottom: solid 5px #fff;
+    -webkit-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    right: 0;
+  }
+  .navBtn span:nth-child(1) {
+    top: 0;
+  }
+  .navBtn span:nth-child(2) {
+    top: 12px;
+  }
+  .navBtn span:nth-child(3) {
+    top: 24px;
+  }
+  .navBtn span::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 5px;
+    height: 0;
+    margin-right: 2px;
+    border-bottom: solid 5px #000;
+    -webkit-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+  }
+}
+
+@media (max-width: 1080px) and (max-width: 480px) {
+  .navBtn span {
+    border-bottom: solid 4px #000;
+  }
+  .navBtn span:nth-child(1) {
+    top: 0;
+  }
+  .navBtn span:nth-child(2) {
+    top: 10px;
+  }
+  .navBtn span:nth-child(3) {
+    top: 20px;
+  }
+  .navBtn span::before {
+    width: 4px;
+    border-bottom: solid 4px #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .navBtn {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.navBtn.open span {
+  width: 30px;
+}
+
+.navBtn.open span:nth-child(1) {
+  top: 7px;
+  left: 0px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.navBtn.open span:nth-child(2), .navBtn.open span:nth-child(3) {
+  top: 7px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.navBtn.open span::before {
+  display: none;
+}
+/*# sourceMappingURL=navBtn.css.map */

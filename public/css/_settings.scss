@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+$primary-color: #034693;
+$background-color: #EEF9FF;
+$text-color: #000000;
+
+$ai-primary-color: #FF8900;
+$ai-background-color: #FFF7EE;
+
+
+$pc: 1080px; // PC
+$tab: 768px; // タブレット
+$tab2: 767px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+        @content;
+    }
+}
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+@mixin tab2 {
+    @media (max-width: ($tab2)) {
+        @content;
+    }
+}
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+@function get_vw($size, $viewport:320){
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
