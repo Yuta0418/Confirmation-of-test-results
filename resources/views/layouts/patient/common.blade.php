@@ -8,10 +8,6 @@
     <meta name="description" content="" />
 
     <link rel="canonical" href="" />
-    <!-- <link rel="icon" href="" sizes="96x96" type="image/png" />
-    <link rel="shortcut icon" href="" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="192x192" href=""> -->
-
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-Control" content="no-cache,no-store" />
     <meta http-equiv="Expires" content="0" />
