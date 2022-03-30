@@ -37,17 +37,12 @@
                         <div>
                             <p class="browser-list-title">Windows</p>
                             <ul>
-                                <li>Internet Explorer11</li>
-                                <li>Microsoft Edge最新版</li>
-                                <li>Mozilla Firefox最新版</li>
                                 <li>Google Chrome最新版</li>
                             </ul>
                         </div>
                         <div>
                             <p class="browser-list-title">macOS</p>
                             <ul>
-                                <li>Safari最新版</li>
-                                <li>Mozilla Firefox最新版</li>
                                 <li>Google Chrome最新版</li>
                             </ul>
                         </div>
