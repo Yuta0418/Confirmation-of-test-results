@@ -1,5 +1,5 @@
 @extends('layouts.admin.common')
-@section('title','患者様情報一覧')
+@section('title','患者情報一覧')
 
 @section('content')
 
